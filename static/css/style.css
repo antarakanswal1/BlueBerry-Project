@@ -1,0 +1,554 @@
+*{
+    margin: 0;
+    padding: 0
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Badge styles */
+.badge-new { background-color: #e74c3c; } /* Red for NEW */
+.badge-hot { background-color: #e74c3c; } /* Red for HOT */
+.badge-sale { background-color: #e74c3c; } /* Red for SALE */
+
+/* Pink stars */
+.star-pink { color: #e91e63; }
+
+/* Timer styling */
+.timer-box {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px 15px;
+    display: inline-block;
+}
+.timer-box span { font-weight: 600; }
+
+/* Card styling */
+.card {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: none;
+}
+
+/* Text colors */
+.primary-text { color: #2c3e50; }
+.secondary-text { color: #7f8c8d; }
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .timer-box { font-size: 14px; margin-top: 10px; }
+    h2 { font-size: 1.5rem; }
+    .card-title { font-size: 1rem; }
+}
+
+.custom-card {
+  display: flex;
+  background-color: #f8f9fa;
+  align-items: center;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card-1 {
+  background: linear-gradient(to right, #fde4c3, #fdf1e0);
+}
+.card-2 {
+  background: linear-gradient(to right, #fad0d0, #fdeef0);
+}
+.custom-card img {
+  width: 120px;
+  height: auto;
+  margin-right: 15px;
+}
+.btn-custom {
+  border: 1px solid #333;
+  background: transparent;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.btn-custom:hover {
+  background: #333;
+  color: #fff;
+}
+
+.custom-card {
+  min-height: 300px; /* Adjust height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.custom-card img {
+  height: 100%; /* Makes the image take full height of the card */
+  max-height: 250px; /* Adjust as needed */
+  object-fit: cover; /* Ensures proper image scaling */
+  width: auto; /* Keeps original aspect ratio */
+}
+
+.custom-card h4 {
+  font-size: 1.5rem; /* Adjust as needed */
+  font-weight: bold;
+}
+
+.custom-card p {
+  font-size: 1.2rem; /* Adjust as needed */
+  color: #555; /* Optional: Improve readability */
+}
+
+.btn-custom {
+  font-size: 1.1rem; /* Increase button text size */
+  padding: 10px 20px; /* Make button larger */
+}
+
+.feature-box {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.feature-box:hover {
+  transform: translateY(-5px);
+}
+.feature-box img {
+  width: 50px;
+  height: 50px;
+}
+
+.vendor-section {
+  text-align: center;
+  margin: 50px 0;
+}
+.vendor-section h2 {
+  font-weight: bold;
+  color: #333;
+}
+.vendor-section h2 span {
+  color: #6c63ff;
+}
+.vendor-section p {
+  color: #777;
+}
+
+.listing-cardd {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.highlighted {
+  border: 2px solid #6c63ff;
+}
+
+.slider-container {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 20px;
+}
+.slider-item {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.slider-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.slider-item:hover img {
+  transform: scale(1.1);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.slider-item:hover .overlay {
+  opacity: 1;
+}
+.overlay i {
+  font-size: 40px;
+  color: white;
+}
+.prefooter {
+  background-color: #F8F8FB;
+  font-family: Arial, sans-serif;
+  padding: 30px 0;
+  text-align: center;
+}
+.prefooter h5 {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+.prefooter .category-title {
+  font-weight: 700;
+  color: #222;
+}
+.prefooter a {
+  text-decoration: none;
+  color: #555;
+  font-size: 16px;
+  margin: 0 8px;
+  transition: color 0.3s;
+}
+.prefooter a:hover {
+  color: #000;
+}
+
+.footer {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+  padding: 40px 0;
+  color: #555;
+}
+.footer h5 {
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+.footer a {
+  text-decoration: none;
+  color: #555;
+  font-size: 17px;
+  display: block;
+  transition: color 0.3s;
+}
+.footer a:hover {
+  color: #007bff;
+}
+.footer .social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 18px;
+  color: #555;
+}
+.footer .social-icons a:hover {
+  color: #007bff;
+}
+.footer .payment-icons img {
+  height: 30px;
+  margin-right: 10px;
+}
+.footer-bottom {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.fruitt-card {
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.fruitt-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.fruitt-card .info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+}
+.fruitt-card .info small {
+  color: gray;
+}
+
+
+.navbar {
+    padding: 10px 15px; 
+  }
+  .navbar-brand span {
+    font-weight: bold;
+    color: #333;
+    font-family: 'Poppins';
+    font-size: 24px;
+  }
+  .dropdown-toggle {
+    color: #666; 
+    font-family:'Poppins';
+    font-size: 16px;
+  }
+  .search-input {
+    background-color: #f0f0f0;
+    border-radius: 20px 0 0 20px;
+    border: none;
+    font-size: 16px;
+  }
+  .search-input::placeholder {
+    color: #ccc;
+  }
+  .search-btn {
+    background-color: #f0f0f0;
+    border-radius: 0 20px 20px 0; 
+    border: none;
+  }
+  .search-btn i {
+    color: #4682B4;
+  }
+  .nav-link {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-family: 'Poppins';
+    font-size: 16px;
+    margin-left: 20px; 
+  }
+  .nav-link i {
+    color: #4682B4;
+    margin-right: 5px;
+    font-size: 18px;
+  }
+  .nav-link div {
+    text-align: left;
+  }
+  .nav-link small {
+    font-size: 12px;
+    color: #666;
+  }
+
+  .links{
+    margin-left: 410px;
+  }
+
+  .hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #F8F8FB;
+}
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2c2c2c;
+}
+.highlight {
+    color: #6C63FF;
+}
+.btn-custom {
+    border: 2px solid #6C63FF;
+    color: #6C63FF;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+.btn-custom:hover {
+    background-color: #6C63FF;
+    color: white;
+}
+
+.hero-sectionn {
+  position: relative;
+  background: url('../assets/banner.jpg') no-repeat center center/cover;
+  height: 700px;
+}
+
+.text-box {
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 350px;
+}
+
+.text-box h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.text-box p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+}
+
+.left-hero{
+    padding-left: 150px;
+}
+
+.right-hero{
+    padding-left: 100px;
+}
+
+.product-card {
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+}
+.discounted-price {
+  text-decoration: line-through;
+  color: grey;
+  font-size: 0.9em;
+}
+
+.product-card {
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+}
+.product-card img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+.price {
+  font-weight: bold;
+  color: #333;
+}
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+}           
+
+/* Hover effect for product cards */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Slightly enlarge */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15); /* Add shadow */
+}
+
+/* Zoom effect on product images */
+.card-img-container {
+  overflow: hidden; /* Prevent overflow */
+}
+
+.card-img-container img {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-container img {
+  transform: scale(1.1); /* Zoom in the image */
+}
+
+/* Change text color slightly on hover */
+.card:hover .card-title {
+  color: #ff6600; /* Highlight the product name */
+}
+
+.fruitt-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fruitt-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.fruitt-card img {
+  width: 100%;
+  border-radius: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.fruitt-card:hover img {
+  opacity: 0.8;
+}
+
+.fruitt-card .info {
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 0 0 10px 10px;
+  transition: background 0.3s ease;
+}
+
+.fruitt-card:hover .info {
+  background: rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    .text-start {
+        text-align: center !important;
+    }
+}
+
+  @media (max-width: 991px) {
+    .navbar-collapse {
+      padding-top: 10px;
+    }
+    .form-inline {
+      width: 100% !important;
+    }
+    .nav-link {
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: 992px) { /* Adjust breakpoint if needed */
+    .navbar-toggler {
+      display: none !important;
+    }  
+  }
+  
